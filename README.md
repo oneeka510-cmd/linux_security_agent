@@ -131,7 +131,3 @@ docs/         Dashboard screenshots
 - One API key is shared by all agents and the dashboard. Per-agent keys and a login would be the next step.
 - Only the latest report per host is kept, with no history.
 - Works on Ubuntu (dpkg). RHEL (rpm) is not supported yet.
-
-## License
-
-Released under the [MIT License](LICENSE).

@@ -2,8 +2,6 @@
 
 A lightweight agent for Linux, written in Go. It lists the installed packages, runs CIS Benchmark configuration checks (Ubuntu 22.04, Level 1), and sends the results to an AWS backend. A web dashboard shows every host, its check results with evidence, and its packages.
 
-**Demo:** [download the dashboard walkthrough (mp4, 15 MB)](https://github.com/oneeka510-cmd/linux_security_agent/raw/main/docs/demo.mp4)
-
 ## How it works
 
 ```mermaid

@@ -1,0 +1,4 @@
+# Keep line endings as LF everywhere (shell scripts and systemd units break with CRLF).
+* text=auto eol=lf
+*.mp4 binary
+*.png binary

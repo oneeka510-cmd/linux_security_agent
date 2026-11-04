@@ -1,0 +1,9 @@
+[Unit]
+Description=go-agent: collect packages and CIS check results and send them to the cloud
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/go-agent send
+TimeoutStartSec=15min

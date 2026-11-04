@@ -1,0 +1,15 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+infra/build/
+crash.log
+
+# Build output
+dist/
+agent/go-agent
+
+# Secrets
+*.pem
+.env

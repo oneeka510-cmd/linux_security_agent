@@ -1,0 +1,10 @@
+#!/bin/sh
+# Runs before the package is removed: stop and disable the daily timer.
+set -e
+
+if [ -d /run/systemd/system ]; then
+    systemctl stop go-agent.timer || true
+    systemctl disable go-agent.timer || true
+fi
+
+exit 0

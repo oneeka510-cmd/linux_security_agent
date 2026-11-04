@@ -1,0 +1,152 @@
+/* Endpoint Agent Dashboard: plain CSS, no frameworks. Light, document-style. */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 16px;
+  background: #ffffff;
+  color: #111111;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.page { max-width: 960px; margin: 0 auto; }
+
+/* ---------- title ---------- */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #111111;
+}
+
+h1 { margin: 0; font-size: 1.4rem; }
+
+button {
+  font: inherit;
+  padding: 5px 14px;
+  border: 1px solid #888888;
+  border-radius: 8px;
+  background: #f2f2f2;
+  cursor: pointer;
+}
+
+.header-actions { display: flex; gap: 8px; }
+[hidden] { display: none !important; }
+
+/* key form and messages */
+#key-form form { display: flex; flex-wrap: wrap; gap: 8px; }
+#key-form input { font: inherit; flex: 1 1 260px; max-width: 420px; padding: 6px 10px; border: 1px solid #888888; border-radius: 8px; }
+#status { margin: 14px 0 0; color: #444444; }
+.empty, .loading { margin: 12px; color: #555555; }
+.error-text { color: #b3261e; font-weight: bold; }
+
+h2 { font-size: 1.1rem; margin: 22px 0 4px; }
+.hint { margin: 0 0 10px; color: #555555; font-size: 0.9rem; }
+.note { margin: 12px 0 0; color: #555555; font-size: 0.85rem; }
+
+/* ---------- hosts list: click a row to expand it ---------- */
+
+.hosts { border: 1px solid #bbbbbb; border-radius: 10px; overflow: hidden; }
+
+/* one column layout shared by the labels and every host row */
+.cols {
+  display: grid;
+  grid-template-columns: 20px 1.5fr 1.3fr 1.2fr 0.8fr 1.6fr;
+  gap: 8px;
+  padding: 8px 10px;
+  align-items: center;
+}
+
+.cols-head { background: #eeeeee; font-weight: bold; border-bottom: 1px solid #bbbbbb; }
+
+.host { border-bottom: 1px solid #bbbbbb; }
+.host:last-child { border-bottom: none; }
+
+.host > summary { cursor: pointer; list-style: none; }
+.host > summary::-webkit-details-marker { display: none; }
+.host > summary:hover { background: #f7f7f7; }
+.host[open] > summary { background: #f0f4fa; }
+.host > summary:focus-visible { outline: 2px solid #1a4fb4; outline-offset: -2px; }
+
+.arrow { color: #555555; font-size: 0.8rem; }
+.host[open] .arrow { display: inline-block; transform: rotate(90deg); }
+
+.host-body { padding: 10px 14px 16px 30px; border-top: 1px solid #bbbbbb; }
+
+.meta { margin: 0 0 12px; color: #444444; font-size: 0.9rem; }
+
+/* ---------- tabs (no JavaScript: hidden radio buttons + labels) ---------- */
+
+.tab-radio { position: absolute; opacity: 0; pointer-events: none; }
+
+.tabs { display: flex; gap: 18px; border-bottom: 1px solid #bbbbbb; margin-bottom: 12px; }
+
+.tabs label {
+  padding: 4px 0;
+  cursor: pointer;
+  color: #555555;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1px;
+}
+
+.panel { display: none; }
+
+.tab-radio.t-cis:checked ~ .panel-cis,
+.tab-radio.t-pkg:checked ~ .panel-pkg { display: block; }
+
+.tab-radio.t-cis:checked ~ .tabs .l-cis,
+.tab-radio.t-pkg:checked ~ .tabs .l-pkg {
+  color: #111111;
+  font-weight: bold;
+  border-bottom-color: #1a4fb4;
+}
+
+.tab-radio:focus-visible ~ .tabs label { outline: 2px solid #1a4fb4; }
+
+/* ---------- tables ---------- */
+
+/* the wrapper draws the outer border and clips the corners; cells only draw inner lines */
+.table-wrap { overflow-x: auto; border: 1px solid #cccccc; border-radius: 10px; }
+
+table { width: 100%; border-collapse: collapse; }
+
+th, td {
+  text-align: left;
+  vertical-align: top;
+  padding: 6px 10px;
+  border-bottom: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+}
+
+th:last-child, td:last-child { border-right: none; }
+tbody tr:last-child td { border-bottom: none; }
+
+th { background: #eeeeee; white-space: nowrap; }
+
+.evidence { font-family: Consolas, "Courier New", monospace; font-size: 0.85rem; color: #333333; word-break: break-word; }
+
+/* ---------- status words ---------- */
+
+.pass  { color: #12683a; font-weight: bold; }
+.fail  { color: #b3261e; font-weight: bold; }
+.na    { color: #666666; font-weight: bold; }
+.error { color: #9a5b00; font-weight: bold; }
+
+/* ---------- package search ---------- */
+
+.search { margin-bottom: 10px; }
+.search input { font: inherit; width: 100%; max-width: 320px; padding: 5px 10px; border: 1px solid #888888; border-radius: 8px; }
+
+/* ---------- phones ---------- */
+
+@media (max-width: 700px) {
+  .cols { grid-template-columns: 20px 1.4fr 1fr 0.8fr 1.4fr; }
+  .hide-small { display: none; }
+  .host-body { padding-left: 14px; }
+}

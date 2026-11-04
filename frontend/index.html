@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Endpoint Agent Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <h1>Endpoint Agent Dashboard</h1>
+    <div class="header-actions">
+      <button type="button" id="refresh" hidden>Refresh</button>
+      <button type="button" id="forget" hidden>Forget API key</button>
+    </div>
+  </header>
+
+  <section id="key-form" hidden>
+    <h2>Enter your API key</h2>
+    <p class="hint">It is kept only in this browser and sent only to the API.</p>
+    <form id="key-form-element">
+      <input type="password" id="key-input" autocomplete="off" aria-label="API key" required>
+      <button type="submit">Connect</button>
+    </form>
+  </section>
+
+  <p id="status" role="status"></p>
+
+  <section id="hosts-section" hidden>
+    <h2 id="hosts-title">Hosts</h2>
+    <p class="hint">Click a host to see its CIS results and installed packages.</p>
+
+    <div class="hosts">
+      <div class="cols cols-head" aria-hidden="true">
+        <span></span>
+        <span>Hostname</span>
+        <span>OS</span>
+        <span class="hide-small">Last seen (UTC)</span>
+        <span>Packages</span>
+        <span>Checks</span>
+      </div>
+      <div id="hosts"></div>
+    </div>
+  </section>
+
+</div>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

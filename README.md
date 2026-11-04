@@ -184,3 +184,7 @@ Open `frontend_url`, enter the API key, and select a host.
 - More CIS checks and PAM verification
 - Publish the package in a private apt repository
 - RPM packaging for RHEL 9
+
+## License
+
+Released under the [MIT License](LICENSE).

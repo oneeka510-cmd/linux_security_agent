@@ -7,9 +7,7 @@ A lightweight agent for Linux endpoints, written in Go. It inventories the insta
 - **Dashboard:** plain HTML, CSS and JavaScript, hosted on S3
 - **Checks:** 11 checks mapped to the CIS Ubuntu Linux 22.04 LTS Benchmark (Level 1)
 
-![Dashboard demo](docs/demo.gif)
-
-[Download the full-quality video (mp4, 15 MB)](https://github.com/oneeka510-cmd/linux_security_agent/raw/main/docs/demo.mp4)
+**Demo:** [download the dashboard walkthrough (mp4, 15 MB)](https://github.com/oneeka510-cmd/linux_security_agent/raw/main/docs/demo.mp4)
 
 ## How it works
 

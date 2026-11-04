@@ -9,7 +9,7 @@ A lightweight agent for Linux endpoints, written in Go. It inventories the insta
 
 ![Dashboard demo](docs/demo.gif)
 
-[Full-quality video (mp4)](https://github.com/oneeka510-cmd/linux_security_agent/raw/main/docs/demo.mp4)
+[Download the full-quality video (mp4, 15 MB)](https://github.com/oneeka510-cmd/linux_security_agent/raw/main/docs/demo.mp4)
 
 ## How it works
 

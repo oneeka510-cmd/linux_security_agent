@@ -122,7 +122,7 @@ backend/      Lambda functions (ingest.py, read.py)
 infra/        Terraform: DynamoDB, Lambda, API Gateway, S3 hosting
 frontend/     Dashboard (index.html, app.js, style.css)
 packaging/    .deb build script and systemd service/timer
-docs/         Demo video and screenshots
+docs/         Dashboard screenshots
 ```
 
 ## Known limitations

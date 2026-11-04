@@ -32,6 +32,20 @@ flowchart LR
 4. **Read.** The `read` Lambda serves the data through `GET /hosts`, `GET /apps` and `GET /cis-results`.
 5. **Display.** The dashboard asks for the API key once, then lists hosts. Opening a host loads its CIS results and packages.
 
+## Dashboard
+
+Hosts at a glance, with a pass/fail summary per host. Click a host to expand it.
+
+![Hosts list](docs/images/dashboard-hosts.png)
+
+Each check shows its status, CIS section and the evidence the agent found (results from an Ubuntu 22.04 EC2 instance):
+
+![CIS results with evidence](docs/images/dashboard-cis-results.png)
+
+The installed packages of each host, with search:
+
+![Installed packages](docs/images/dashboard-packages.png)
+
 ## What the agent reports
 
 ```jsonc
